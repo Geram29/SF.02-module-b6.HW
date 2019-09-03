@@ -46,19 +46,19 @@ def new_album():
         # проверка корректности данных
             if album_data["album"].replace(" ", "") == "":
                 # result = "\n****************************************************\n   НЕКОРРЕКТНЫЕ ДАННЫЕ  =album=  Код ошибки: 400  \n****************************************************\n"
-                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  =album=  Код ошибки: 400  " + separline
+                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  album=  Код ошибки: 400  " + separline
                 result = HTTPError(400, err_message)
             elif album_data["artist"].replace(" ", "") == "": 
                 # result = "\n****************************************************\n   НЕКОРРЕКТНЫЕ ДАННЫЕ  =artist=  Код ошибки: 400  \n****************************************************\n"
-                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  =artist=  Код ошибки: 400  " + separline
+                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  artist=  Код ошибки: 400  " + separline
                 result = HTTPError(400, err_message)
             elif album_data["genre"].replace(" ", "") == "":
                 # result = "\n****************************************************\n   НЕКОРРЕКТНЫЕ ДАННЫЕ  =genre=  Код ошибки: 400  \n****************************************************\n"
-                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  =genre=  Код ошибки: 400  " + separline
+                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  genre=  Код ошибки: 400  " + separline
                 result = HTTPError(400, err_message)
             elif album_data["year"].replace(" ", "") == "" or album.is_int(album_data["year"]) == False or int(album_data["year"]) <= 0:
                 # result = "\n****************************************************\n   НЕКОРРЕКТНЫЕ ДАННЫЕ  =year=  Код ошибки: 400  \n****************************************************\n"
-                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  =year=  Код ошибки: 400  " + separline
+                err_message = separline + "   НЕКОРРЕКТНЫЕ ДАННЫЕ  year=  Код ошибки: 400  " + separline
                 result = HTTPError(400, err_message)
         # если валидация ОК - добавление нового альбома в БД
         if result == "":
