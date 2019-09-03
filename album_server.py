@@ -64,7 +64,7 @@ def new_album():
         # если валидация ОК - добавление нового альбома в БД
         if result == "":
             if album.add(album_data):
-                result = ">>> Альбом <{}> исполнителя {} успешно сохранен!".format(album_data["album"].title(), album_data["artist"].capitalize())
+                result = ">>> Альбом <{}> исполнителя {} успешно сохранен!".format(album_data["album"].title(), album_data["artist"].title())
             else:
                 err_message = (separline + "   АЛЬБОМ НЕ СОХРАНЕН! {} УЖЕ ЕСТЬ В БАЗЕ ДАННЫХ! Код ошибки: 409   " + separline).format(album_data["album"].title())
                 result = HTTPError(409, err_message)
