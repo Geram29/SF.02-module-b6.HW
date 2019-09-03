@@ -14,7 +14,7 @@ import album
 def albums(artist):
     albums_list = album.find(artist)
     if not albums_list:
-        err_message = "Альбомов {} не найдено!".format(artist)
+        err_message = "Альбомов исполнителя {} не найдено!".format(artist)
         result = HTTPError(404, err_message)
     else:
         album_names = [album.album + " - " + str(album.year) for album in albums_list]
