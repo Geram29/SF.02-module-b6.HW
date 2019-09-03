@@ -41,7 +41,8 @@ def new_album():
         separline ="\n*******************************************************************************************************\n"
         # проверка корректности параметров запроса
         if album_data["album"] == None or album_data["artist"] == None or album_data["genre"] == None or album_data["year"] == None:
-            result = separline + "   ОТСУТСТВУЮТ НЕОБХОДИМЫЕ ПАРАМЕТРЫ ЗАПРОСА   " + separline
+            err_message = separline + "   ОТСУТСТВУЮТ НЕОБХОДИМЫЕ ПАРАМЕТРЫ ЗАПРОСА   " + separline
+            result = HTTPError(500, err_message)
         else:
         # проверка корректности данных
             if album_data["album"].replace(" ", "") == "":
